@@ -1,0 +1,65 @@
+{% load static %}
+<header class="main-header">
+  <a href="/" class="logo">
+    <span class="logo-mini"><b>PF</b></span>
+    <span class="logo-lg"><b>P</b>lanificator</span>
+  </a>
+  <nav class="navbar navbar-static-top" role="navigation">
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+  {% if user.is_authenticated %}
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="{% static 'images/profil.png' %}" class="user-image" alt="User Image">
+            <span class="hidden-xs">{{ request.user.username }}</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="user-header">
+              <img src="{% static 'images/profil.png' %}" class="img-circle" alt="User Image">
+              <p>
+                {{ request.user.first_name|default:'N' }} {{ request.user.last_name|default:'A' }}
+                <small>{{ request.user.email|default:'N A' }}</small>
+              </p>
+            </li>
+            <li class="user-footer">
+              <div class="pull-right">
+                <a href="/" class="btn btn-default btn-flat">Sign out</a>
+                
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  {% else %}
+    <script>
+    $(document).ready(function(){
+      $("a.prevent-default").click(function(event) {
+        event.preventDefault();
+      });
+    });
+    </script>  
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li class="user user-menu">
+          <a href="/login" class="dropdown-toggle prevent-default" data-toggle="dropdown">
+            <span class="hidden-xs">Login</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li class="user user-menu">
+          <a href="/userprofile/signup">
+            <span class="hidden-xs">Sign in</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  {% endif %}
+  </nav>
+</header>

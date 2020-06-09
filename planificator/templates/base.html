@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+{% include "head.html" with title=title %}
+
+<body class="hold-transition skin-yellow sidebar-mini{% if request.COOKIES.toggleState and request.COOKIES.toggleState == 'closed' %} sidebar-collapse{% endif  %}">
+
+  <div class="wrapper">
+
+    {% include "header.html" %}
+
+    {% include "menu.html" %}
+
+    <div class="content-wrapper">
+      <section class="content-header">
+        {% block title_page %}{% endblock %}
+      </section>
+      <section class="content container-fluid">
+        {% block content %}{% endblock %}
+      </section>
+    </div>
+
+    {% include "footer.html" %}
+
+  </div>
+
+{% include "js.html" %}
+
+{% block javascript_head %} {% endblock %}
+{% block javascript %} {% endblock %}
+
+  <script>
+      $.AdminLTESidebarTweak = {};
+
+      $.AdminLTESidebarTweak.options = {
+          EnableRemember: true,
+          NoTransitionAfterReload: false
+          //Removes the transition after page reload.
+      };
+
+      $(function () {
+          "use strict";
+
+          $("body").on("collapsed.pushMenu", function(){
+              if($.AdminLTESidebarTweak.options.EnableRemember){
+                  document.cookie = "toggleState=closed;path=/";
+              }
+          }).on("expanded.pushMenu", function(){
+              if($.AdminLTESidebarTweak.options.EnableRemember){
+                  document.cookie = "toggleState=opened;path=/";
+              }
+          });
+      });
+
+      $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+      })
+  </script>
+
+</body>
+</html>

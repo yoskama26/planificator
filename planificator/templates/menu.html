@@ -1,0 +1,29 @@
+{% load menu_generator %}
+{% load static %}
+
+<aside class="main-sidebar">
+  <section class="sidebar">
+{% get_menu "NAV_MENU_LEFT" as left_menu %}
+    <!-- {% print request %} -->
+    <ul class="sidebar-menu" data-widget="tree">
+{% for item in left_menu %}
+  {% if item.submenu %}    
+      <li class="treeview{% if item.url in request.path %} active{% endif %}">
+        <a href="#"><i  class="fa {{ item.icon }}"></i> <span>{{ item.name }}</span>
+          <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+    {% for menu in item.submenu %}
+          <li class="{% if menu.url in request.path %}active{% endif %}"><a href="{{ menu.url }}">{{ menu.name }}</a></li>
+    {% endfor %}
+        </ul>
+      </li>
+  {% else %}
+      <li class="{% if item.selected %}active{% endif %}"><a href="{{ item.url }}"><i class="fa {{ item.icon }}"></i> <span>{{ item.name }}</span></a></li>
+  {% endif %}
+{% endfor %}
+    </ul>
+  </section>
+</aside>
