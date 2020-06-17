@@ -26,8 +26,9 @@
             </li>
             <li class="user-footer">
               <div class="pull-right">
-                <a href="/" class="btn btn-default btn-flat">Sign out</a>
-                
+                <form class="logout-link" action="/userprofile/logout/" method="POST">
+                  {% csrf_token %}
+                  <button type="submit">Log out</button>             
               </div>
             </li>
           </ul>
@@ -45,7 +46,7 @@
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
         <li class="user user-menu">
-          <a href="/login" class="dropdown-toggle prevent-default" data-toggle="dropdown">
+          <a href="/userprofile/login">
             <span class="hidden-xs">Login</span>
           </a>
         </li>
@@ -55,7 +56,7 @@
       <ul class="nav navbar-nav">
         <li class="user user-menu">
           <a href="/userprofile/signup">
-            <span class="hidden-xs">Sign in</span>
+            <span class="hidden-xs">Sign up</span>
           </a>
         </li>
       </ul>

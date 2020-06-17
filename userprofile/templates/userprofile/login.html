@@ -1,0 +1,13 @@
+{% extends 'base.html' %}<!-- Permet de mettre un html "général" de présention commun a toutes les pages html (contient les elements de base present sur toutes les pages html)  -->
+
+{% block content %}
+    <h1>Log in</h1>
+    <form class="site-form" action="/userprofile/login/" method="post">
+        {% csrf_token %} <!-- Token de sécurité il joue le role "d'identifieur"-->
+        {{ form }} 
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{request.GET.next}}"> <!-- permet de retourner a l'endroit d'ou l'utilisateurs est aller pour ce connecter en récupérant la get request (dans l'url)-->
+        {% endif %}
+        <input type="submit" value="Login"><!-- Bouton d'envoi-->
+    </form>
+{% endblock %} 
