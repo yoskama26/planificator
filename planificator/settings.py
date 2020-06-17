@@ -14,6 +14,9 @@ import os
 
 
 from .menus import NAV_MENU_LEFT
+#from django.contrib.auth import get_user_model
+#User = get_user_model()
+
 # from tfs import TFSAPI
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

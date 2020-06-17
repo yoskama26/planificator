@@ -3,8 +3,10 @@ from django.views import View
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from organisation.models import Application,ApplicationMember,Collaborator
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
-
+@method_decorator(login_required(login_url='/userprofile/login/'), name='dispatch')#permet de cacher la view si l'utilisateur n'est pas connecté et le redirige vers le login(décorateur)
 class CollaboratorView(View):
 
     template = 'team/collaborator.html'
@@ -13,7 +15,6 @@ class CollaboratorView(View):
         'title_page': "Teams",
         'description_page': "Collaborator profil",
     }
-
     def get(self, request, collaborator_id=None):
 
         context = self.basecontext()
