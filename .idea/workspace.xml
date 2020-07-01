@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35084a57-75b6-4f22-9f61-e009fae959d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userprofile/templates/userprofile/testgit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planificator/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/planificator/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planificator/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/planificator/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planificator/templates/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/planificator/templates/head.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/planificator/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/planificator/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planificator/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/planificator/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/planificator/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/planificator/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userprofile/templates/userprofile/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile/templates/userprofile/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userprofile/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userprofile/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
