@@ -24,6 +24,7 @@
       <li class="{% if item.selected %}active{% endif %}"><a href="{{ item.url }}"><i class="fa {{ item.icon }}"></i> <span>{{ item.name }}</span></a></li>
   {% endif %}
 {% endfor %}
+      <li><a href="{% url 'usercomments:list'%}">Comments</a></li>
     </ul>
   </section>
 </aside>

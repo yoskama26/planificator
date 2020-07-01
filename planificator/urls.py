@@ -9,4 +9,7 @@ urlpatterns = [
     path('grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^userprofile/', include('userprofile.urls')),
+    url(r'^usercomments/', include('usercomments.urls')),
 ]
+
+

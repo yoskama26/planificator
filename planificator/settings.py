@@ -45,13 +45,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #'debug_toolbar',
     'home.apps.HomeConfig',
     'organisation.apps.OrganisationConfig',
     'userprofile.apps.UserprofileConfig',
     'menu_generator',
     'import_export',
     'debugtools',
-    #'userprofile',
+    'usercomments',
+
 ]
 
 MIDDLEWARE = [
@@ -62,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'planificator.urls'
@@ -148,7 +151,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-
+  
 if os.getenv('DJANGO_ENV') == 'prod':
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
     STATIC_UPLOADS = os.path.join(BASE_DIR, 'static/uploads')
@@ -160,3 +163,5 @@ else:
 #tfsclient = TFSAPI("https://tfs.transport-systemes-solutions.fr/tfs/", user="lm52121853", password="MaTh3uX_1119")
 
 GRAPPELLI_ADMIN_TITLE = 'Planificator Admin'
+
+#INTERNAL_IPS =['127.0.0.1']
