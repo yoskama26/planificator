@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'import_export',
     'debugtools',
     'usercomments',
+    'cal',
 
 ]
 

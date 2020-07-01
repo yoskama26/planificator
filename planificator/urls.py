@@ -7,6 +7,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('organisation/', include('organisation.urls')),
     path('grappelli/', include('grappelli.urls')),
+    path('calendrier/', include('cal.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^userprofile/', include('userprofile.urls')),
     url(r'^usercomments/', include('usercomments.urls')),
