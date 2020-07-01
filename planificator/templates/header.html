@@ -24,11 +24,12 @@
                 <small>{{ request.user.email|default:'N A' }}</small>
               </p>
             </li>
-            <li class="user-footer">
+            <li class="user-footer">          
               <div class="pull-right">
                 <form class="logout-link" action="/userprofile/logout/" method="POST">
                   {% csrf_token %}
                   <button type="submit">Log out</button>             
+                </form>
               </div>
             </li>
           </ul>

@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+form{
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+</style>
     <h1>Signup</h1>
     <form class="site-form" action="/userprofile/signup/" method="post">
         {% csrf_token %}
