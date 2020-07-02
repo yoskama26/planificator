@@ -8,7 +8,6 @@ class Calendar(HTMLCalendar):
 		self.month = month
 		super(Calendar, self).__init__()
 
-
 	def formatday(self, day, events):
 		events_per_day = events.filter(start_time__day=day)
 		d = ''
@@ -18,6 +17,7 @@ class Calendar(HTMLCalendar):
 		if day != 0:
 			return f"<td><span class='date'>{day}</span><ul> {d} </ul></td>"
 		return '<td></td>'
+
 
 	def formatweek(self, theweek, events):
 		week = ''
