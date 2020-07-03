@@ -16,6 +16,6 @@ box-sizing: border-box;
     <form class="site-form" action="/userprofile/signup/" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" value="Signup">
+        <input id="signup" type="submit" value="Signup">
     </form>
 {% endblock %} 

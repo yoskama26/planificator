@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
-<!DOCTYPE html>
 
         {% block content %}
         <h1>
             Comment List
         </h1>
-        <input type=button onclick=window.location.href='/usercomments/create'; value="Add imputation"/>
+        <input id="add_imputation" type=button onclick=window.location.href='/usercomments/create'; value="Add imputation"/>
         <div class="comments">
             {% for comment in comments %}
                 <div class="comment">
                     <h2><a href="{% url 'usercomments:detail' slug=comment.slug %}">{{comment.title}}</a></h2>
-                    <p>{{comment.hours}}</p>
+                    <p class="comment_italic">{{comment.hours}}</p>
                     <p>{{comment.snippet}}</p>
-                    <p>{{comment.date}}</p>
+                    <p class="comment_italic">{{comment.date}}</p>
                 </div>
             {% endfor %}
         {% endblock %}

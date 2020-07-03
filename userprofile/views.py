@@ -29,17 +29,11 @@ def login_view(request):
     else:
         form = AuthenticationForm()
     return render(request,'userprofile/login.html',{'form':form})
-<<<<<<< HEAD
 
-=======
->>>>>>> 5e536d99f59af565bdf7bdc17eeebd73ab2b13ff
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
         return redirect('/')
     else:
         pass
-<<<<<<< HEAD
 
-=======
->>>>>>> 5e536d99f59af565bdf7bdc17eeebd73ab2b13ff
