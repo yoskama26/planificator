@@ -5,7 +5,7 @@
         <h1>
             Comment List
         </h1>
-        <input type=button onclick=window.location.href='/usercomments/create'; value="Add imputation"/>
+        <input id="add_imputation" type=button onclick=window.location.href='/usercomments/create'; value="Add imputation"/>
         <div class="comments">
             {% for comment in comments %}
                 <div class="comment">

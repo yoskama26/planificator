@@ -18,14 +18,24 @@ NAV_MENU_LEFT = [
         "icon": "fa-users",
         "submenu": [
             {
-                "name": 'Application team',
+                "name": "Application team",
                 "url": '/organisation/application/',
             },
             {
-                "name": 'Collaborator',
+                "name": "Collaborator",
                 'url': '/organisation/collaborator/',
             },
         ],
+    },
+    {
+        "name": "Comments",
+        "url": "/usercomments/",
+        "icon": "fa-comments",
+    },
+    {
+        "name": "Imputation",
+        "url": "/calendrier/calendar/",
+        "icon": "fa-calendar",
     },
 ]
 
